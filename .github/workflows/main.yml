@@ -11,7 +11,7 @@ jobs:
     steps:
     - name: Загрузка Ngrok.
       run: |
-        sudo wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-windows-amd64.zip -O ngrok.tgz
+        sudo wget https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz -O ngrok.tgz
         sudo wget https://raw.githubusercontent.com/gamegame1236/dedic-top/main/start.bat -O start.bat
         sudo wget https://raw.githubusercontent.com/gamegame1236/dedic-top/main/loop.bat -O loop.bat
     - name: Загрузка программ.
