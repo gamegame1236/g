@@ -11,16 +11,15 @@ jobs:
     steps:
     - name: Загрузка Ngrok.
       run: |
-        sudo su
-        wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-windows-amd64.zip -O ngrok.zip
-        wget https://raw.githubusercontent.com/gamegame1236/dedic-top/main/start.bat -O start.bat
-        wget https://raw.githubusercontent.com/gamegame1236/dedic-top/main/loop.bat -O loop.bat
+        sudo wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-windows-amd64.zip -O ngrok.zip
+        sudo wget https://raw.githubusercontent.com/gamegame1236/dedic-top/main/start.bat -O start.bat
+        sudo wget https://raw.githubusercontent.com/gamegame1236/dedic-top/main/loop.bat -O loop.bat
     - name: Загрузка программ.
       run: |
-        wget https://raw.githubusercontent.com/gamegame1236/dedic-top/main/launcher/Node.js.lnk -O Node.js.lnk
-        wget https://raw.githubusercontent.com/gamegame1236/dedic-top/main/launcher/FastConfigVPS_v2.3.exe -O "FastConfigVPS_v2.3.exe"
-        wget https://raw.githubusercontent.com/gamegame1236/dedic-top/main/launcher/Visual%20Studio%202019.lnk -O "Visual Studio 2019.lnk"
-        apt-get install unzip
+        sudo wget https://raw.githubusercontent.com/gamegame1236/dedic-top/main/launcher/Node.js.lnk -O Node.js.lnk
+        sudo wget https://raw.githubusercontent.com/gamegame1236/dedic-top/main/launcher/FastConfigVPS_v2.3.exe -O "FastConfigVPS_v2.3.exe"
+        sudo wget https://raw.githubusercontent.com/gamegame1236/dedic-top/main/launcher/Visual%20Studio%202019.lnk -O "Visual Studio 2019.lnk"
+        sudo apt-get install unzip
     - name: Загрузка Ngrok файла.
       run: unzip ngrok.zip
     - name: Подключение к учётной записи Ngrok.
