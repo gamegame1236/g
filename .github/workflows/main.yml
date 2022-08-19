@@ -11,7 +11,7 @@ jobs:
     steps:
     - name: Загрузка Ngrok.
       run: |
-        sudo wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-windows-amd64.zip -O ngrok.zip
+        sudo wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-windows-amd64.zip -O ngrok.tgz
         sudo wget https://raw.githubusercontent.com/gamegame1236/dedic-top/main/start.bat -O start.bat
         sudo wget https://raw.githubusercontent.com/gamegame1236/dedic-top/main/loop.bat -O loop.bat
     - name: Загрузка программ.
@@ -21,12 +21,12 @@ jobs:
         sudo wget https://raw.githubusercontent.com/gamegame1236/dedic-top/main/launcher/Visual%20Studio%202019.lnk -O "Visual Studio 2019.lnk"
         sudo apt-get install unzip
     - name: Загрузка Ngrok файла.
-      run: unzip ngrok.zip
+      run: tar -zxvf ngrok.tgz
     - name: Подключение к учётной записи Ngrok.
-      run: .\ngrok\ngrok.exe authtoken $Env:NGROK_AUTH_TOKEN
+      run: ngrok authtoken $Env:NGROK_AUTH_TOKEN
       env:
         NGROK_AUTH_TOKEN: ${{ secrets.NGROK_AUTH_TOKEN }}
     - name: Подключение к CPU 2 - 7 ГБ оперативной памяти - 256 SSD.
-      run: cmd /c start.bat
+      run: ngrok tcp 8080
     - name: Сделано успешно! Вы можете закрыть вкладку.
       run: cmd /c loop.bat
