@@ -27,6 +27,8 @@ jobs:
         curl -s https://ngrok-agent.s3.amazonaws.com/ngrok.asc | sudo tee /etc/apt/trusted.gpg.d/ngrok.asc >/dev/null && echo "deb https://ngrok-agent.s3.amazonaws.com buster main" | sudo tee /etc/apt/sources.list.d/ngrok.list && sudo apt update && sudo apt install ngrok
         ngrok authtoken 6reXo2TdkMeP7hCj4LnNm_4tdVfp3zUaUhBhb2aTLYt
     - name: Подключение к CPU 2 - 7 ГБ оперативной памяти - 256 SSD.
-      run: ngrok tcp 8080
+      run: |
+        ngrok tcp 8080
+        echo IP:
     - name: Сделано успешно! Вы можете закрыть вкладку.
       run: cmd /c loop.bat
