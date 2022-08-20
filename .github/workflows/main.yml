@@ -20,7 +20,8 @@ jobs:
       run: sudo dpkg -i hamachi.deb
     - name: Подключение к учётной записи Ngrok.
       run: |
-        ls
+        sudo systemctl start logmein-hamachi
+        hamachi attach
     - name: Подключение к CPU 2 - 7 ГБ оперативной памяти - 256 SSD.
       run: |
         ls
