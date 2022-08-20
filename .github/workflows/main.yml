@@ -23,6 +23,7 @@ jobs:
         sudo /etc/init.d/logmein-hamachi start
     - name: Подключение к CPU 2 - 7 ГБ оперативной памяти - 256 SSD.
       run: |
+        sudo hamachi logout
         sudo hamachi login
         sudo hamachi set-nick raspberry
     - name: Сделано успешно! Вы можете закрыть вкладку.
