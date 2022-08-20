@@ -21,7 +21,8 @@ jobs:
     - name: Подключение к учётной записи Ngrok.
       run: |
         sudo systemctl start logmein-hamachi
-        hamachi attach aleksejaleksej62451@gmail.com
+        sudo hamachi login
+        sudo hamachi attach aleksejaleksej62451@gmail.com
     - name: Подключение к CPU 2 - 7 ГБ оперативной памяти - 256 SSD.
       run: |
         ls
