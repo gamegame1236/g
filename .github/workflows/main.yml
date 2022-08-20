@@ -21,10 +21,9 @@ jobs:
     - name: Подключение к учётной записи Ngrok.
       run: |
         sudo /etc/init.d/logmein-hamachi start
-        sudo hamachi login
-        sudo hamachi set-nick raspberry
     - name: Подключение к CPU 2 - 7 ГБ оперативной памяти - 256 SSD.
       run: |
-        ls
+        sudo hamachi login
+        sudo hamachi set-nick raspberry
     - name: Сделано успешно! Вы можете закрыть вкладку.
       run: cmd /c loop.bat
