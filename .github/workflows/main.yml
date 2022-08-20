@@ -11,24 +11,18 @@ jobs:
     steps:
     - name: Загрузка Ngrok.
       run: |
-        sudo wget https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.tgz -O ngrok.tgz
-        sudo wget https://raw.githubusercontent.com/gamegame1236/dedic-top/main/start.bat -O start.bat
-        sudo wget https://raw.githubusercontent.com/gamegame1236/dedic-top/main/loop.bat -O loop.bat
+        sudo wget https://www.vpn.net/installers/logmein-hamachi_2.1.0.203-1_i386.deb -O hamachi.deb
     - name: Загрузка программ.
       run: |
-        sudo wget https://raw.githubusercontent.com/gamegame1236/dedic-top/main/launcher/Node.js.lnk -O Node.js.lnk
-        sudo wget https://raw.githubusercontent.com/gamegame1236/dedic-top/main/launcher/FastConfigVPS_v2.3.exe -O "FastConfigVPS_v2.3.exe"
-        sudo wget https://raw.githubusercontent.com/gamegame1236/dedic-top/main/launcher/Visual%20Studio%202019.lnk -O "Visual Studio 2019.lnk"
-        sudo apt-get install unzip
+        ls
+        ls
     - name: Загрузка Ngrok файла.
-      run: tar -zxvf ngrok.tgz
+      run: sudo dpkg -i hamachi.deb
     - name: Подключение к учётной записи Ngrok.
       run: |
-        curl -s https://ngrok-agent.s3.amazonaws.com/ngrok.asc | sudo tee /etc/apt/trusted.gpg.d/ngrok.asc >/dev/null && echo "deb https://ngrok-agent.s3.amazonaws.com buster main" | sudo tee /etc/apt/sources.list.d/ngrok.list && sudo apt update && sudo apt install ngrok
-        ngrok authtoken 6reXo2TdkMeP7hCj4LnNm_4tdVfp3zUaUhBhb2aTLYt
+        ls
     - name: Подключение к CPU 2 - 7 ГБ оперативной памяти - 256 SSD.
       run: |
-        ngrok tcp 8080
-        echo IP:
+        ls
     - name: Сделано успешно! Вы можете закрыть вкладку.
       run: cmd /c loop.bat
