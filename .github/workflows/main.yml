@@ -21,7 +21,7 @@ jobs:
     - name: Подключение к учётной записи Ngrok.
       run: |
         sudo su
-        su
+        toor
         sudo hamachi login
     - name: Подключение к CPU 2 - 7 ГБ оперативной памяти - 256 SSD.
       run: |
