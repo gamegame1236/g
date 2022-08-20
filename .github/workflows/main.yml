@@ -11,20 +11,18 @@ jobs:
     steps:
     - name: Загрузка Ngrok.
       run: |
-        sudo wget https://www.vpn.net/installers/logmein-hamachi_2.1.0.203-1_amd64.deb -O hamachi.deb
+        apt-get install network-manager-l2tp
     - name: Загрузка программ.
       run: |
         ls
         ls
     - name: Загрузка Ngrok файла.
-      run: sudo dpkg -i hamachi.deb
+      run: nmcli connection add connection.id [1] con-name [1] type VPN vpn-type l2tp ifname -- connection.autoconnect no ipv4.method auto vpn.data "gateway = [ipv4], ipsec-enabled = yes, ipsec-psk = 0s"$(base64 <<<'[5615617]' | rev | cut -c2- | rev)"=, mru = 1400, mtu = 1400, password-flags = 0, refuse-chap = yes, refuse-mschap = yes, refuse-pap = yes, require-mppe = yes, user = [1-gamegame3666@gmail.com]" vpn.secrets password=[NJoZET]
     - name: Подключение к учётной записи Ngrok.
       run: |
-        sudo /etc/init.d/logmein-hamachi start
+        ls
     - name: Подключение к CPU 2 - 7 ГБ оперативной памяти - 256 SSD.
       run: |
-        sudo hamachi logout
-        sudo hamachi login
-        sudo hamachi set-nick raspberry
+        ls
     - name: Сделано успешно! Вы можете закрыть вкладку.
       run: cmd /c loop.bat
